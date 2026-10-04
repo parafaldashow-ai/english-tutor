@@ -1,0 +1,95 @@
+/* ========================================
+   VARIÁVEIS DE TEMA
+   ======================================== */
+
+:root {
+  --bg-principal: #f5f5f7;
+  --bg-card: #ffffff;
+  --bg-secundario: #f8fafc;
+  --bg-hover: #eef2ff;
+
+  --texto-principal: #1a1a1a;
+  --texto-secundario: #666666;
+  --texto-terciario: #999999;
+
+  --borda: #e2e8f0;
+  --borda-forte: #cbd5e1;
+
+  --roxo: #6366f1;
+  --roxo-escuro: #4f46e5;
+  --roxo-claro: #eef2ff;
+
+  --sombra: rgba(0, 0, 0, 0.05);
+}
+
+/* Tema escuro */
+body.escuro {
+  --bg-principal: #0f172a;
+  --bg-card: #1e293b;
+  --bg-secundario: #1e293b;
+  --bg-hover: #334155;
+
+  --texto-principal: #f1f5f9;
+  --texto-secundario: #cbd5e1;
+  --texto-terciario: #94a3b8;
+
+  --borda: #334155;
+  --borda-forte: #475569;
+
+  --roxo: #818cf8;
+  --roxo-escuro: #6366f1;
+  --roxo-claro: #312e81;
+
+  --sombra: rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   ESTILOS GLOBAIS
+   ======================================== */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg-principal);
+  color: var(--texto-principal);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ========================================
+   CLASSES ÚTEIS
+   ======================================== */
+
+/* Cartões que se adaptam ao tema */
+.tema-card {
+  background: var(--bg-card);
+  color: var(--texto-principal);
+  box-shadow: 0 2px 10px var(--sombra);
+}
+
+/* Textos secundários */
+.tema-texto-sec {
+  color: var(--texto-secundario);
+}
+
+/* Botões primários */
+.tema-botao {
+  background: var(--roxo);
+  color: white;
+  border: none;
+  transition: background 0.2s;
+}
+
+.tema-botao:hover {
+  background: var(--roxo-escuro);
+}
+
+/* Inputs e selects */
+.tema-input {
+  background: var(--bg-card);
+  color: var(--texto-principal);
+  border: 2px solid var(--borda);
+}
+
+.tema-input:focus {
+  border-color: var(--roxo);
+}
