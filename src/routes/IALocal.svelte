@@ -146,22 +146,23 @@
   .container { width: 100%; text-align: center; }
 
   .intro {
-    background: white;
+    background: var(--bg-card);
+    color: var(--texto-principal);
     border-radius: 20px;
     padding: 30px 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px var(--sombra);
   }
 
-  .intro h2 { margin-top: 0; }
+  .intro h2 { margin-top: 0; color: var(--texto-principal); }
 
   .intro p {
-    color: #555;
+    color: var(--texto-secundario);
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
   .detalhes {
-    background: #f8fafc;
+    background: var(--bg-secundario);
     border-radius: 12px;
     padding: 12px 16px;
     margin: 16px 0;
@@ -172,14 +173,14 @@
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--borda);
     font-size: 0.9rem;
   }
 
   .item:last-child { border-bottom: none; }
 
-  .label { color: #666; }
-  .valor { font-weight: 600; }
+  .label { color: var(--texto-secundario); }
+  .valor { font-weight: 600; color: var(--texto-principal); }
 
   .aviso {
     background: #fffbeb;
@@ -203,7 +204,7 @@
   .botao-iniciar {
     width: 100%;
     padding: 16px;
-    background: #6366f1;
+    background: var(--roxo);
     color: white;
     border: none;
     border-radius: 12px;
@@ -212,17 +213,20 @@
     cursor: pointer;
   }
 
-  .botao-iniciar:hover { background: #4f46e5; }
+  .botao-iniciar:hover { background: var(--roxo-escuro); }
 
   .loading {
-    background: white;
+    background: var(--bg-card);
+    color: var(--texto-principal);
     border-radius: 20px;
     padding: 40px 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px var(--sombra);
   }
 
+  .loading h2 { color: var(--texto-principal); }
+
   .progresso {
-    color: #6366f1;
+    color: var(--roxo);
     font-size: 0.85rem;
     word-break: break-word;
     margin: 16px 0;
@@ -231,8 +235,8 @@
   .spinner {
     width: 40px;
     height: 40px;
-    border: 4px solid #e2e8f0;
-    border-top-color: #6366f1;
+    border: 4px solid var(--borda);
+    border-top-color: var(--roxo);
     border-radius: 50%;
     margin: 20px auto;
     animation: girar 1s linear infinite;
@@ -241,15 +245,15 @@
   @keyframes girar { to { transform: rotate(360deg); } }
 
   .dica {
-    color: #999;
+    color: var(--texto-terciario);
     font-size: 0.8rem;
     margin-top: 16px;
   }
 
   .chat {
-    background: white;
+    background: var(--bg-card);
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px var(--sombra);
     overflow: hidden;
     height: 70vh;
     display: flex;
@@ -258,7 +262,7 @@
   }
 
   .header {
-    background: #6366f1;
+    background: var(--roxo);
     color: white;
     padding: 12px 20px;
     display: flex;
@@ -275,7 +279,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: #f8fafc;
+    background: var(--bg-secundario);
   }
 
   .msg { display: flex; }
@@ -290,13 +294,17 @@
     line-height: 1.4;
   }
 
+  /* Balão da IA: fundo do card, texto principal */
   .msg.ia .balao {
-    background: white;
+    background: var(--bg-card);
+    color: var(--texto-principal);
     border-bottom-left-radius: 4px;
+    box-shadow: 0 1px 3px var(--sombra);
   }
 
+  /* Balão do usuário: fundo roxo, texto branco */
   .msg.usuario .balao {
-    background: #6366f1;
+    background: var(--roxo);
     color: white;
     border-bottom-right-radius: 4px;
   }
@@ -314,24 +322,30 @@
     display: flex;
     gap: 8px;
     padding: 12px 16px;
-    background: white;
-    border-top: 1px solid #e2e8f0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--borda);
   }
 
   .input input {
     flex: 1;
     padding: 10px 14px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid var(--borda);
     border-radius: 10px;
     font-size: 0.95rem;
     outline: none;
+    background: var(--bg-card);
+    color: var(--texto-principal);
   }
 
-  .input input:focus { border-color: #6366f1; }
+  .input input::placeholder {
+    color: var(--texto-terciario);
+  }
+
+  .input input:focus { border-color: var(--roxo); }
 
   .input button {
     padding: 0 16px;
-    background: #6366f1;
+    background: var(--roxo);
     color: white;
     border: none;
     border-radius: 10px;
@@ -339,7 +353,10 @@
     cursor: pointer;
   }
 
-  .input button:disabled { background: #cbd5e1; }
+  .input button:disabled {
+    background: var(--borda-forte);
+    color: var(--texto-terciario);
+  }
 
   .aviso-ruim {
     background: #fef2f2;
